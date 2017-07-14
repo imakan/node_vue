@@ -11,6 +11,7 @@ const routes = [
         children:[
             {
                 path: '/hello',
+                name:'欢迎',
                 component: routeType.hello
             },
             {
@@ -30,6 +31,7 @@ export default new Router({
     mode: 'history',
     routes:routes,
     scrollBehavior (to, from, savedPosition) {
+	    // to 和 from 都是 路由信息对象
         return { x: 0, y: 0 }
     }
 })

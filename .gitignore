@@ -1,43 +1,7 @@
-{
-    "presets": [
-        [
-            "env",
-            {
-                "modules": false,
-                "targets": {
-                    "browsers": [
-                        "> 1%",
-                        "last 2 versions",
-                        "not ie <= 8"
-                    ]
-                }
-            }
-        ],
-        "stage-2"
-    ],
-    "plugins": [
-        "babel-polyfill",
-        "transform-runtime",
-        [
-            "component",
-            [
-                {
-                    "libraryName": "element-ui",
-                    "styleLibraryName": "~theme"
-                }
-            ]
-        ]
-    ],
-    "comments": false,
-    "env": {
-        "test": {
-            "presets": [
-                "env",
-                "stage-2"
-            ],
-            "plugins": [
-                "istanbul"
-            ]
-        }
-    }
-}
+node_modules
+logs/
+*.idea
+dist
+.DS_Store
+npm-debug.log
+node_modules.zip

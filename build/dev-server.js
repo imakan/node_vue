@@ -1,4 +1,3 @@
-#!/usr/bin/node --harmony
 'use strict'
 process.env.NODE_ENV = '"development"';
 let webpack = require('webpack')

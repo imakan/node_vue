@@ -12,6 +12,11 @@
                 msg: 'bbbbbb '
             }
         },
+        watch:{
+            '$route'(to,from){
+	            // 对路由变化作出响应...
+            }
+        },
         mounted(){
         	console.log(process.env.NODE_ENV)
         }

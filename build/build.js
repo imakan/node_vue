@@ -1,4 +1,3 @@
-#!/usr/bin/node --harmony
 process.env.NODE_ENV = 'production'
 var ora = require('ora')
 var webpack = require('webpack')
