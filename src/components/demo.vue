@@ -9,7 +9,7 @@
         name: 'hello',
         data () {
             return {
-                msg: 'bbbbbb '
+                msg: 'bbbbbbsdasda'
             }
         },
         watch:{

@@ -1,7 +1,11 @@
 <template>
     <div id="app">
         <img src="~assets/logo.png">
-        <router-view></router-view>
+        <transition>
+            <router-view class="view one"></router-view>
+            <router-view class="view two" name="a"></router-view>
+            <router-view class="view three" name="b"></router-view>
+        </transition>
     </div>
 </template>
 
