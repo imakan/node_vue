@@ -1,15 +1,14 @@
 /**
  * Created by makan on 2017/6/19.
  */
-const redis = require('redis');
-const config = require('../serverConfig/config.global.js').redisConfig
+var Redis = require('ioredis');
+const redisConfig = require('../serverConfig/config.global.js').redisConfig
+var redisClient = new Redis(redisConfig);
+
 const redisObj = {
 	client: null,
 	connect() {
-		this.client = redis.createClient(config.port, config.host)
-		this.client.auth(config.password, function () { //redis连接密码校验
-			console.log('redis----通过认证')
-		});
+		this.client = redisClient
 		this.client.on('error', function (err) { //redis连接异常
 			console.error('reids Error ' + err);
 		});

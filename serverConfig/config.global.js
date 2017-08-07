@@ -9,21 +9,34 @@ let redisConfig = {};
 let mysqlConfig = {};
 let mailConfig = {};
 var _config = function (index) {
-	if(index == 1){
+	if (index == 1) {
 		domain = '';
-		apiUrl = '';
-		uploadUrl = '';
-		redisConfig = {   //redis 配置参数
-			host: '',
-			password:'',
-			port: ''
+		apiUrl = 'http://10.10.220.214:18004';
+		uploadUrl = 'http://10.10.220.214:3000';
+		redisConfig = {   //redis 配置参数,哨兵机制
+			sentinels: [
+				{
+					host: '10.10.202.165',
+					port: 26380,
+				},
+				{
+					host: '10.10.202.166',
+					port: 26380,
+				},
+				{
+					host: '10.10.202.167',
+					port: 26380,
+				},
+			],
+			name: 'zsjy_6380',
+			password: 'zsjy@1208'
 		};
 		mysqlConfig = {
-			host:'',
-			user:'',
-			password:'',
-			port:'',
-			database:'',
+			host: '',
+			user: '',
+			password: '',
+			port: '',
+			database: '',
 		};
 		mailConfig = {
 			host: "smtp.qq.com", // 主机
@@ -34,21 +47,34 @@ var _config = function (index) {
 				pass: "nabuamduppqsfigi" // 密码
 			}
 		}
-	}else{
+	} else {
 		domain = '';
-		apiUrl = '';
+		apiUrl = 'http://10.10.220.214:18004';
 		uploadUrl = '';
 		redisConfig = {   //redis 配置参数
-			host: '',
-			password:'',
-			port: ''
+			sentinels: [
+				{
+					host: '10.10.202.165',
+					port: 26380,
+				},
+				{
+					host: '10.10.202.166',
+					port: 26380,
+				},
+				{
+					host: '10.10.202.167',
+					port: 26380,
+				},
+			],
+			name: 'zsjy_6380',
+			password: 'zsjy@1208'
 		};
 		mysqlConfig = {
-			host:'',
-			user:'',
-			password:'',
-			port:'',
-			database:'',
+			host: '',
+			user: '',
+			password: '',
+			port: '',
+			database: '',
 		};
 		mailConfig = {
 			host: "smtp.qq.com", // 主机
@@ -85,7 +111,7 @@ module.exports = {
 	localhost:'127.0.0.1',
 	domain:domain,
 	ServerType:ServerType,
-	port: "13007",
+	port: 18002,
 	cookie: {
 		cookie_secret: projectName + 'cookie$secret*Key#2017',//cookie密匙
 		path: '/',
