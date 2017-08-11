@@ -6,8 +6,13 @@ var filter = {};
 filter.isArray = (value) => {
 	return toString.apply(value) === '[object Array]';
 }
-filter.format = (fmt) => {
-	var date = new Date()
+filter.format = (fmt,time) => {
+	var date = ''
+	if(time){
+		date = new Date(time)
+	}else{
+		date = new Date()
+	}
 	var o = {
 		"M+": date.getMonth() + 1, //月份
 		"d+": date.getDate(), //日
@@ -41,7 +46,7 @@ filter.getBaseurl = (value) => {
 
 }
 
-filter.subStringLen = (str,len) => {
+filter.subStringLen = (str, len) => {
 	var newLength = 0;
 	var newStr = "";
 	var chineseRegex = /[^\x00-\xff]/g;
@@ -65,11 +70,11 @@ filter.subStringLen = (str,len) => {
 	return newStr;
 }
 
-filter.uniqueStr = (str,arr) => {
+filter.uniqueStr = (str, arr) => {
 	console.log(str)
-	if(!arr.length) return str
-	for(var i = 0;i<arr.length;i++){
-		if(arr[i] == str){
+	if (!arr.length) return str
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] == str) {
 			return ''
 			break;
 		}
@@ -77,7 +82,7 @@ filter.uniqueStr = (str,arr) => {
 	return str;
 }
 filter.isEmojiCharacter = (substring) => {
-	if(!substring){
+	if (!substring) {
 		return false
 	}
 	for (var i = 0; i < substring.length; i++) {
@@ -113,22 +118,48 @@ filter.isEmojiCharacter = (substring) => {
 	}
 }
 
-;(function (name,definition) {
+
+filter.loadImg = (imgKey) => {
+	if (!imgKey) {
+		return require('../static/image/1.jpg')
+	}
+	var Img = new Image();
+	Img.src = imgKey;
+	Img.onload = function () {
+		return imgKey;
+	};
+	Img.onerror = function () {
+		return require('../static/image/1.jpg')
+	}
+
+}
+
+filter.http = (url) => {
+	var flag   = url.startsWith('http://') || url.startsWith('https://')
+	if(flag){
+		return url
+	}else{
+		return 'http://'+url
+	}
+
+}
+
+(function (name, definition) {
 	//检测上下文是否为AMD 或者 CMD;
 	var hasDefine = typeof define === 'function';
 	//检测上下文是否为node
 	var hasExports = typeof module !== 'undefined' && module.exports;
-	if(hasDefine){
+	if (hasDefine) {
 		//AMD环境或者是CMD环境
 		define(definition)
-	}else if(hasExports){
+	} else if (hasExports) {
 		//定义为普通Node模块
 		module.exports = definition();
-	}else{
+	} else {
 		//将模块的执行结果挂载window变量中，在浏览器中this指向window对象
 		this[name] = definition()
 	}
-})('filter',function () {
+})('filter', function () {
 	return filter
 })
 

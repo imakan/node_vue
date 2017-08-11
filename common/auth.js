@@ -34,11 +34,9 @@ user.prototype.showMenu = function (data) { //用户权限
 user.prototype.authUser = (req, res, next) => { //验证用户是否登录
 	if (!req.session.user || !req.session.auth) { //session中不存在用户信息或者是权限信息
 		if(req.url=="/login"){
-			next();
-			return false
+			next()
 		}else{
 			res.redirect('/login')
-			return false
 		}
 		return false
 	}
