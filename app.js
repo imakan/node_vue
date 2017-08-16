@@ -52,6 +52,7 @@ app.locals.email = 'makan@feinno.com';
 
 /** express路由中间件 **/
 let route = require('./controller/index');
+let upload = require('./controller/upload');
 
 
 /**
@@ -65,6 +66,7 @@ app.use(function(req,res,next){
 	auth.authUser(req,res,next)
 });
 app.use('/api', route);
+app.use('/upload', upload);
 
 
 /** html5路由中间件，如果输地址栏 express没有监听到，则使用html中间件 **/
