@@ -5,7 +5,7 @@
   "author": "makan <makan@feinno.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon --harmony  ./build/dev-server.js",
+    "dev": "nodemon --harmony  ./build/dev-server",
     "build": "node --harmony  ./build/build.js",
     "start": "nodemon --harmony ./bin/demo_system"
   },

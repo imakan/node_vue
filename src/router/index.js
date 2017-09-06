@@ -17,10 +17,6 @@ const routes = [
                 component: routeType.hello,
 	            meta:{requireAuthZ:true}
             },
-            {
-                path: '/demo',
-                component: routeType.demo
-            },
         ]
     },
 

@@ -60,11 +60,11 @@ let upload = require('./controller/upload');
  * 如果当前页面不需要登录判断，那么放在这段代码前面
  * 比如帮助页面 app.use('/help')
  */
-app.use(function(req,res,next){
-	// console.log(`用户信息===${JSON.stringify(req.session.user)}`)
-	// console.log(`用户权限===${req.session.auth}`)
-	auth.authUser(req,res,next)
-});
+// app.use(function(req,res,next){
+// 	// console.log(`用户信息===${JSON.stringify(req.session.user)}`)
+// 	// console.log(`用户权限===${req.session.auth}`)
+// 	auth.authUser(req,res,next)
+// });
 app.use('/api', route);
 app.use('/upload', upload);
 
