@@ -1,9 +1,10 @@
 <template>
-    <div id="app">
-        <div>
+    <div id="app" style="clear: both;">
+        <head-component></head-component>
+        <div class="left">
             <demoComponent></demoComponent>
         </div>
-        <div>
+        <div class="right">
             <router-view></router-view>
         </div>
     </div>
@@ -12,6 +13,7 @@
 <script>
 	import {mapGetters, mapActions} from 'vuex';
     import demoComponent from './components/demo.vue';
+    import headComponent from "./components/head.vue"
 	export default {
 		name: 'app',
 		created(){
@@ -19,7 +21,8 @@
 			this.getRandomId()
 		},
         components:{
-            demoComponent
+            demoComponent,
+            headComponent
         },
 		methods: {
 			...mapActions([
@@ -33,5 +36,17 @@
 </script>
 
 <style scoped>
-
+    .left{
+        float: left;
+        width: 15%;
+        height: 100%;
+    }
+    .right{
+        float: left;
+        width: 83%;
+        min-height: 500px;
+        background: #fff;
+        margin: 10px 1%;
+        padding: 10px 0;
+    }
 </style>

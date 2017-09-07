@@ -12,10 +12,16 @@ const routes = [
 	    },
         children:[
             {
-                path: '/hello',
+                path: '/Vue-Awesome-Swiper',
                 name:'欢迎',
-                component: routeType.hello,
+                component: routeType.VueAwesomeSwiper,
 	            meta:{requireAuthZ:true}
+            },
+            {
+                path: '/v-distpicker',
+                name:'欢迎',
+                component: routeType.VDistpicker,
+                meta:{requireAuthZ:true}
             },
         ]
     },

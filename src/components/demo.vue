@@ -1,17 +1,19 @@
 <template>
-    <div class="demo">
-        <el-col :span="4">
-            <el-menu default-active="1" class="el-menu-vertical-demo">
-                <el-menu-item index="1" @click="locationHref('/hello')">导航一</el-menu-item>
-                <el-menu-item index="2" @click="locationHref('/')">导航二</el-menu-item>
-            </el-menu>
-        </el-col>
+    <div class="menu-box">
+        <div class="menu-box">
+            <el-col>
+                <el-menu default-active="1" class="el-menu-vertical-demo">
+                    <el-menu-item index="1" @click="locationHref('/Vue-Awesome-Swiper')">Vue-Awesome-Swiper</el-menu-item>
+                    <el-menu-item index="2" @click="locationHref('/v-distpicker')">Vue-distpicker</el-menu-item>
+                </el-menu>
+            </el-col>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'hello',
+        name: 'demo',
         data () {
             return {
                 msg: 'bbbbbbsdasda'
@@ -34,5 +36,28 @@
     }
 </script>
 <style scoped>
-
+    /*左侧栏更改element插件样式*/
+    .menu-box .el-menu{
+        background-color: #e1ecfa;
+    }
+    .menu-box .el-menu-item.is-active {
+        color: #fff;
+        background: #20a0ff;
+        height: 50px;
+        line-height: 50px;
+        text-align: left;
+    }
+    .menu-box .el-menu-item:hover{
+        background: #9dc4e9;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+    }
+    .menu-box .el-menu-item{
+        height: 50px;
+        line-height: 50px;
+    }
+    .hide-btn{
+        text-align:right;
+    }
 </style>

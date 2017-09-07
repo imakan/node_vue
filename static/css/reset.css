@@ -15,7 +15,7 @@
 * html iframe, * html frame{ overflow:auto;}
 * html frameset{ overflow:hidden;}
 /* 常用标签，基本标签默认样式取消，HTML标签，取消基本标签默认样式，防止不同浏览器显示效果不同，text-align:center; 解决不同浏览器居中问题 */
-body{color:#000;/*background-color:#ededed;*/font-family: "PingFang SC","Hiragino Sans GB","Helvetica Neue","Microsoft YaHei","微软雅黑",Arial,sans-serif;text-align:center;}
+body{background: #d4e9fc;color:#000;/*background-color:#ededed;*/font-family: "PingFang SC","Hiragino Sans GB","Helvetica Neue","Microsoft YaHei","微软雅黑",Arial,sans-serif;text-align:center;}
 body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,tr{ margin:0; padding:0;}
 input,select{ font-size:12px; vertical-align:middle;}
 select{
