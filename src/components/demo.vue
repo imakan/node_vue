@@ -2,9 +2,10 @@
     <div class="menu-box">
         <div class="menu-box">
             <el-col>
-                <el-menu default-active="1" class="el-menu-vertical-demo">
-                    <el-menu-item index="1" @click="locationHref('/Vue-Awesome-Swiper')">Vue-Awesome-Swiper</el-menu-item>
-                    <el-menu-item index="2" @click="locationHref('/v-distpicker')">Vue-distpicker</el-menu-item>
+                <el-menu :default-active="''+getMenu()" class="el-menu-vertical-demo">
+                    <el-menu-item index="1" @click="locationHref('/Vue-Awesome-Swiper',1)">Vue-Awesome-Swiper</el-menu-item>
+                    <el-menu-item index="2" @click="locationHref('/v-distpicker',2)">Vue-distpicker</el-menu-item>
+                    <el-menu-item index="3" @click="locationHref('/vue-dragging',3)">Vue-dragging</el-menu-item>
                 </el-menu>
             </el-col>
         </div>
@@ -12,11 +13,12 @@
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex';
     export default {
         name: 'demo',
         data () {
             return {
-                msg: 'bbbbbbsdasda'
+                msg: 'bbbbbbsdasda',
             }
         },
         watch:{
@@ -24,11 +26,23 @@
 	            // 对路由变化作出响应...
             }
         },
+        created() {
+            let vm=this;
+            console.log(vm.getMenu());
+        },
         methods: {
-            locationHref(href){
+            locationHref(href,index){
                 let vm=this;
+                vm.setMenu(index);
+                console.log(vm.getMenu());
                 vm.$router.push({path: href})
-            }
+            },
+            ...mapActions([
+                'setMenu',
+            ]),
+            ...mapGetters([
+                'getMenu',
+            ])
         },
         mounted(){
         	console.log(process.env.NODE_ENV)

@@ -5,11 +5,13 @@ import ElementUI from 'element-ui';
 import Vue from 'vue'
 import vuex from 'vuex'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import VueDND from 'awe-dnd'
 import store from './store'
 import router from './router'
 Vue.use(ElementUI)
 Vue.use(vuex)
 Vue.use(VueAwesomeSwiper)
+Vue.use(VueDND)
 Vue.config.devtools = true
 Vue.config.productionTip = false
 Vue.config.errorHandler = function (err, vm) {

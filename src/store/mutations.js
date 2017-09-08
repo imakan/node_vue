@@ -1,6 +1,7 @@
 import Vue from 'vue'
 const state = {
 	randomId: Math.floor(Math.random() * 1000),//随机生成验证码ID
+	menu:1
 
 	// activeType: null,
 	// itemsPerPage: 20,
@@ -19,6 +20,9 @@ const mutations = {
 	RANDOMNUMBER:(state, mutation) => {
 		state.randomId = mutation.randomId;
 	},
+    MENUNUMBER:(state, mutation) => {
+        state.menu = mutation.menu;
+	}
 
 
 	// FETCH_USER:(state, {type}) => {

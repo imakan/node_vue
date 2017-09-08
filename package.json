@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
+    "awe-dnd": "^0.3.0",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",

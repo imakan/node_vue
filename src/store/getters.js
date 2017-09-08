@@ -17,5 +17,8 @@ export default {
 	getRandomId(state,getters){
 		// console.log(getters)   //这里不能写getters.activeIds  形成递归 造成栈溢出
 		return state.mutations.randomId;
+	},
+	getMenu(state,getters){
+		return state.mutations.menu;
 	}
 }

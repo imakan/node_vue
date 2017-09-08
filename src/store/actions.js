@@ -5,6 +5,11 @@ export default {
 			randomId: Math.floor(Math.random() * 1000)
 		})
 	},
+	setMenu:({commit, state},menu)=>{
+		commit('MENUNUMBER',{
+			menu:menu
+		})
+	},
 	ENSURE_ACTIVE_ITEMS: ({dispatch, getters}) => {
 		return dispatch('FETCH_ITEMS', {
 			ids: getters.activeIds
