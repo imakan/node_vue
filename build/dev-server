@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 process.env.NODE_ENV = '"development"';
 let webpack = require('webpack')
 let app = require('../app');

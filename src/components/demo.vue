@@ -6,6 +6,7 @@
                     <el-menu-item index="1" @click="locationHref('/Vue-Awesome-Swiper',1)">Vue-Awesome-Swiper</el-menu-item>
                     <el-menu-item index="2" @click="locationHref('/v-distpicker',2)">Vue-distpicker</el-menu-item>
                     <el-menu-item index="3" @click="locationHref('/vue-dragging',3)">Vue-dragging</el-menu-item>
+                    <el-menu-item index="4" @click="locationHref('/useUE',4)">V-UE</el-menu-item>
                 </el-menu>
             </el-col>
         </div>

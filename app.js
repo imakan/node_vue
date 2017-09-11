@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 let serverConfig = require('./serverConfig/config.global');
 let path = require('path');
 let express = require('express');

@@ -1,5 +1,6 @@
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
     entry: {
         app: './src/main.js',
@@ -54,5 +55,12 @@ module.exports = {
     },
     plugins:[
         new ExtractTextPlugin('./static/css/[name].css'),
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, '../static/UE'),
+                to: "../dist/static/UE",
+                ignore: ['.*']
+            }
+        ])
     ]
 }

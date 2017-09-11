@@ -29,6 +29,12 @@ const routes = [
                 component: routeType.vueDragging,
                 meta:{requireAuthZ:true}
             },
+            {
+                path: '/useUE',
+                name:'欢迎',
+                component: routeType.useUE,
+                meta:{requireAuthZ:true}
+            },
         ]
     },
 

@@ -7,3 +7,4 @@ export const VueAwesomeSwiper = resolve => require(['@/components/Vue-Awesome-Sw
 export const notFound = resolve => require(['@/components/notFound'], resolve)
 export const VDistpicker = resolve => require(['@/components/v-distpicker'], resolve)
 export const vueDragging = resolve => require(['@/components/vue-dragging'], resolve)
+export const useUE = resolve => require(['@/components/useUE'], resolve)

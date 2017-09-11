@@ -19,6 +19,7 @@
 		created(){
 			this.setRandomId()
 			this.getRandomId()
+//            this.$router.push({path: '/Vue-Awesome-Swiper'});
 		},
         components:{
             demoComponent,
